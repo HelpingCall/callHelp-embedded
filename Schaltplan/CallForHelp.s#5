@@ -7291,14 +7291,20 @@ SMD air coil with pick and place cap</description>
 </class>
 </classes>
 <groups>
-<schematic_group name="BATTERIE_CONNECTOR"/>
 <<<<<<< HEAD
+<schematic_group name="BATTERIE_CONNECTOR"/>
 =======
-<schematic_group name="4.2V"/>
-<schematic_group name="5V"/>
-<schematic_group name="CHARGER"/>
-<schematic_group name="STATUS_LED"/>
-<schematic_group name="TOGGLE_SWITCH"/>
+<schematic_group name="BATTERIE_CONNECTOR" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<schematic_group name="4.2V" grouprefs="VOLTAGE_REGULATION POWER_SUPPLY"/>
+<schematic_group name="5V" grouprefs="VOLTAGE_REGULATION POWER_SUPPLY"/>
+<schematic_group name="CHARGER" grouprefs="POWER_SUPPLY"/>
+<schematic_group name="STATUS_LED" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<schematic_group name="TOGGLE_SWITCH" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<schematic_group name="SIM800L_MODULE" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<schematic_group name="ESP8266" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<schematic_group name="VOLTAGE_REGULATION" grouprefs="POWER_SUPPLY"/>
+<schematic_group name="POWER_SUPPLY"/>
+<schematic_group name="INPUT_OUTPUT_LOGIC"/>
 >>>>>>> develop
 </groups>
 <parts>
@@ -7314,8 +7320,7 @@ SMD air coil with pick and place cap</description>
 <part name="TOGGLE_SWITCH" library="switch" library_urn="urn:adsk.eagle:library:380" deviceset="320-916" device="" package3d_urn="urn:adsk.eagle:package:27678/1"/>
 <part name="5V_REGULATOR" library="TPS61022RWUR" deviceset="TPS61022RWUR" device=""/>
 <part name="4.2V_REGULATOR" library="TPS61022RWUR" deviceset="TPS61022RWUR" device=""/>
-<part name="BAT_GND" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="L02P" device="" package3d_urn="urn:adsk.eagle:package:5777/1"/>
-<part name="BAT_VCC" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="L02P" device="" package3d_urn="urn:adsk.eagle:package:5777/1"/>
+<part name="BATTERIE" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="L02P" device="" package3d_urn="urn:adsk.eagle:package:5777/1"/>
 =======
 <part name="C1" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="1000uF"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="400Ω"/>
@@ -7388,144 +7393,144 @@ SMD air coil with pick and place cap</description>
 <attribute name="NAME" x="242.57" y="96.52" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="242.57" y="93.98" size="1.778" layer="96" align="center-left"/>
 </instance>
-<instance part="BAT_GND" gate="-1" x="259.08" y="27.94" smashed="yes" grouprefs="BATTERIE_CONNECTOR">
-<attribute name="NAME" x="258.572" y="28.956" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="259.334" y="25.527" size="1.778" layer="96"/>
+<instance part="BATTERIE" gate="-1" x="251.46" y="30.48" smashed="yes">
+<attribute name="NAME" x="250.952" y="31.496" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="251.714" y="28.067" size="1.778" layer="96"/>
 </instance>
-<instance part="BAT_VCC" gate="-1" x="259.08" y="25.4" smashed="yes" grouprefs="BATTERIE_CONNECTOR">
-<attribute name="NAME" x="258.572" y="26.416" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="259.334" y="22.987" size="1.778" layer="96"/>
+<instance part="BATTERIE" gate="-2" x="251.46" y="25.4" smashed="yes">
+<attribute name="NAME" x="250.952" y="26.416" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="251.714" y="22.987" size="1.778" layer="96"/>
 =======
-<instance part="WEMOS1" gate="D1" x="55.88" y="22.86" smashed="yes">
-<attribute name="NAME" x="45.72" y="35.56" size="1.778" layer="95"/>
-<attribute name="VALUE" x="48.26" y="7.62" size="1.778" layer="96"/>
+<instance part="WEMOS1" gate="D1" x="12.7" y="15.24" smashed="yes" grouprefs="ESP8266 INPUT_OUTPUT_LOGIC">
+<attribute name="NAME" x="2.54" y="27.94" size="1.778" layer="95"/>
+<attribute name="VALUE" x="5.08" y="0" size="1.778" layer="96"/>
 </instance>
-<instance part="SIM800L" gate="G$1" x="149.86" y="30.48" smashed="yes"/>
-<instance part="TP4056" gate="G$1" x="147.32" y="93.98" smashed="yes" rot="R90" grouprefs="CHARGER">
-<attribute name="NAME" x="152.4" y="78.74" size="1.778" layer="95" rot="R180"/>
+<instance part="SIM800L" gate="G$1" x="132.08" y="25.4" smashed="yes" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC"/>
+<instance part="TP4056" gate="G$1" x="213.36" y="93.98" smashed="yes" rot="R90" grouprefs="POWER_SUPPLY CHARGER">
+<attribute name="NAME" x="218.44" y="78.74" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="LED1" gate="G$1" x="33.02" y="81.28" smashed="yes" rot="R90" grouprefs="STATUS_LED"/>
-<instance part="C1" gate="G$1" x="7.62" y="81.28" smashed="yes" rot="R90" grouprefs="STATUS_LED">
-<attribute name="NAME" x="7.239" y="87.884" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="12.319" y="85.344" size="1.778" layer="96" rot="R180"/>
+<instance part="LED1" gate="G$1" x="22.86" y="71.12" smashed="yes" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC"/>
+<instance part="C1" gate="G$1" x="22.86" y="96.52" smashed="yes" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC">
+<attribute name="NAME" x="29.464" y="96.901" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="26.924" y="91.821" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R1" gate="G$1" x="35.56" y="55.88" smashed="yes" rot="R90" grouprefs="STATUS_LED">
-<attribute name="NAME" x="39.1414" y="57.15" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="41.402" y="54.61" size="1.778" layer="96" rot="R180"/>
+<instance part="R1" gate="G$1" x="-2.54" y="68.58" smashed="yes" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC">
+<attribute name="NAME" x="-1.27" y="64.9986" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-3.81" y="62.738" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SWITCH" gate="1" x="12.7" y="20.32" smashed="yes" rot="R270" grouprefs="TOGGLE_SWITCH">
-<attribute name="NAME" x="23.495" y="13.97" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="15.24" y="24.13" size="1.778" layer="96"/>
+<instance part="SWITCH" gate="1" x="-38.1" y="12.7" smashed="yes" rot="R270" grouprefs="TOGGLE_SWITCH INPUT_OUTPUT_LOGIC">
+<attribute name="NAME" x="-27.305" y="6.35" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-35.56" y="16.51" size="1.778" layer="96"/>
 </instance>
-<instance part="5V_REGULATOR" gate="G$1" x="254" y="20.32" smashed="yes" rot="R180" grouprefs="5V">
-<attribute name="NAME" x="250.19" y="12.7" size="1.778" layer="95" rot="R180" align="center-left"/>
-<attribute name="VALUE" x="250.19" y="15.24" size="1.778" layer="96" rot="R180" align="center-left"/>
+<instance part="5V_REGULATOR" gate="G$1" x="317.5" y="20.32" smashed="yes" rot="R180" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="313.69" y="12.7" size="1.778" layer="95" rot="R180" align="center-left"/>
+<attribute name="VALUE" x="313.69" y="15.24" size="1.778" layer="96" rot="R180" align="center-left"/>
 </instance>
-<instance part="4.2V_REGULATOR" gate="G$1" x="254" y="88.9" smashed="yes" rot="R180" grouprefs="4.2V">
-<attribute name="NAME" x="250.19" y="81.28" size="1.778" layer="95" rot="R180" align="center-left"/>
-<attribute name="VALUE" x="250.19" y="83.82" size="1.778" layer="96" rot="R180" align="center-left"/>
+<instance part="4.2V_REGULATOR" gate="G$1" x="317.5" y="88.9" smashed="yes" rot="R180" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="313.69" y="81.28" size="1.778" layer="95" rot="R180" align="center-left"/>
+<attribute name="VALUE" x="313.69" y="83.82" size="1.778" layer="96" rot="R180" align="center-left"/>
 </instance>
-<instance part="BATTERIE" gate="-1" x="149.86" y="119.38" smashed="yes" rot="R270" grouprefs="CHARGER">
-<attribute name="NAME" x="150.876" y="119.888" size="1.778" layer="95"/>
-<attribute name="VALUE" x="147.447" y="119.126" size="1.778" layer="96" rot="R270"/>
+<instance part="BATTERIE" gate="-1" x="215.9" y="119.38" smashed="yes" rot="R270" grouprefs="POWER_SUPPLY CHARGER">
+<attribute name="NAME" x="216.916" y="119.888" size="1.778" layer="95"/>
+<attribute name="VALUE" x="213.487" y="119.126" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="BATTERIE" gate="-2" x="144.78" y="119.38" smashed="yes" rot="R270" grouprefs="CHARGER">
-<attribute name="NAME" x="130.556" y="119.888" size="1.778" layer="95"/>
-<attribute name="VALUE" x="142.367" y="119.126" size="1.778" layer="96" rot="R270"/>
+<instance part="BATTERIE" gate="-2" x="210.82" y="119.38" smashed="yes" rot="R270" grouprefs="POWER_SUPPLY CHARGER">
+<attribute name="NAME" x="196.596" y="119.888" size="1.778" layer="95"/>
+<attribute name="VALUE" x="208.407" y="119.126" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="L1" gate="G$1" x="238.76" y="38.1" smashed="yes" grouprefs="5V">
-<attribute name="NAME" x="234.95" y="39.878" size="1.778" layer="95"/>
-<attribute name="VALUE" x="234.95" y="34.544" size="1.778" layer="96"/>
+<instance part="L1" gate="G$1" x="302.26" y="38.1" smashed="yes" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="298.45" y="39.878" size="1.778" layer="95"/>
+<attribute name="VALUE" x="298.45" y="34.544" size="1.778" layer="96"/>
 </instance>
-<instance part="C2" gate="G$1" x="294.64" y="27.94" smashed="yes" grouprefs="5V">
-<attribute name="NAME" x="301.244" y="28.321" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="298.704" y="23.241" size="1.778" layer="96" rot="R90"/>
+<instance part="C2" gate="G$1" x="358.14" y="27.94" smashed="yes" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="364.744" y="28.321" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="362.204" y="23.241" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C3" gate="G$1" x="203.2" y="17.78" smashed="yes" grouprefs="5V">
-<attribute name="NAME" x="209.804" y="13.081" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="209.804" y="10.541" size="1.778" layer="96" rot="R180"/>
+<instance part="C3" gate="G$1" x="266.7" y="17.78" smashed="yes" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="273.304" y="13.081" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="273.304" y="10.541" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R2" gate="G$1" x="274.32" y="38.1" smashed="yes" rot="R90" grouprefs="5V">
-<attribute name="NAME" x="280.4414" y="39.37" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="282.702" y="36.83" size="1.778" layer="96" rot="R180"/>
+<instance part="R2" gate="G$1" x="337.82" y="38.1" smashed="yes" rot="R90" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="343.9414" y="39.37" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="346.202" y="36.83" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R3" gate="G$1" x="274.32" y="17.78" smashed="yes" rot="R90" grouprefs="5V">
-<attribute name="NAME" x="280.4414" y="19.05" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="282.702" y="16.51" size="1.778" layer="96" rot="R180"/>
+<instance part="R3" gate="G$1" x="337.82" y="17.78" smashed="yes" rot="R90" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="343.9414" y="19.05" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="346.202" y="16.51" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="L2" gate="G$1" x="238.76" y="109.22" smashed="yes" grouprefs="4.2V">
-<attribute name="NAME" x="234.95" y="110.998" size="1.778" layer="95"/>
-<attribute name="VALUE" x="234.95" y="105.664" size="1.778" layer="96"/>
+<instance part="L2" gate="G$1" x="302.26" y="109.22" smashed="yes" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="298.45" y="110.998" size="1.778" layer="95"/>
+<attribute name="VALUE" x="298.45" y="105.664" size="1.778" layer="96"/>
 </instance>
-<instance part="C4" gate="G$1" x="203.2" y="86.36" smashed="yes" grouprefs="4.2V">
-<attribute name="NAME" x="209.804" y="86.741" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="209.804" y="84.201" size="1.778" layer="96" rot="R180"/>
+<instance part="C4" gate="G$1" x="266.7" y="86.36" smashed="yes" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="273.304" y="86.741" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="273.304" y="84.201" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C5" gate="G$1" x="294.64" y="93.98" smashed="yes" rot="R180" grouprefs="4.2V">
-<attribute name="NAME" x="298.196" y="93.599" size="1.778" layer="95"/>
-<attribute name="VALUE" x="298.196" y="96.139" size="1.778" layer="96"/>
+<instance part="C5" gate="G$1" x="358.14" y="93.98" smashed="yes" rot="R180" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="361.696" y="93.599" size="1.778" layer="95"/>
+<attribute name="VALUE" x="361.696" y="96.139" size="1.778" layer="96"/>
 </instance>
-<instance part="R4" gate="G$1" x="276.86" y="106.68" smashed="yes" rot="R90" grouprefs="4.2V">
-<attribute name="NAME" x="282.9814" y="107.95" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="285.242" y="105.41" size="1.778" layer="96" rot="R180"/>
+<instance part="R4" gate="G$1" x="340.36" y="106.68" smashed="yes" rot="R90" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="346.4814" y="107.95" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="348.742" y="105.41" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R5" gate="G$1" x="276.86" y="86.36" smashed="yes" rot="R90" grouprefs="4.2V">
-<attribute name="NAME" x="282.9814" y="87.63" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="285.242" y="85.09" size="1.778" layer="96" rot="R180"/>
+<instance part="R5" gate="G$1" x="340.36" y="86.36" smashed="yes" rot="R90" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="NAME" x="346.4814" y="87.63" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="348.742" y="85.09" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+1" gate="1" x="132.08" y="114.3" smashed="yes" rot="R90" grouprefs="CHARGER">
-<attribute name="VALUE" x="132.08" y="114.3" size="1.778" layer="96" rot="R180"/>
+<instance part="P+1" gate="1" x="198.12" y="114.3" smashed="yes" rot="R90" grouprefs="POWER_SUPPLY CHARGER">
+<attribute name="VALUE" x="198.12" y="114.3" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+3" gate="1" x="190.5" y="93.98" smashed="yes" rot="R90" grouprefs="4.2V">
-<attribute name="VALUE" x="190.5" y="96.52" size="1.778" layer="96" rot="R180"/>
+<instance part="P+3" gate="1" x="254" y="93.98" smashed="yes" rot="R90" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="VALUE" x="254" y="96.52" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND1" gate="1" x="162.56" y="114.3" smashed="yes" rot="R90" grouprefs="CHARGER">
-<attribute name="VALUE" x="162.56" y="111.76" size="1.778" layer="96"/>
+<instance part="GND1" gate="1" x="228.6" y="114.3" smashed="yes" rot="R90" grouprefs="POWER_SUPPLY CHARGER">
+<attribute name="VALUE" x="228.6" y="111.76" size="1.778" layer="96"/>
 </instance>
-<instance part="GND2" gate="1" x="190.5" y="76.2" smashed="yes" rot="R270" grouprefs="4.2V">
-<attribute name="VALUE" x="190.5" y="73.66" size="1.778" layer="96" rot="R180"/>
+<instance part="GND2" gate="1" x="254" y="76.2" smashed="yes" rot="R270" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="VALUE" x="254" y="73.66" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND3" gate="1" x="129.54" y="12.7" smashed="yes">
-<attribute name="VALUE" x="132.08" y="12.7" size="1.778" layer="96" rot="R270"/>
+<instance part="GND3" gate="1" x="111.76" y="7.62" smashed="yes" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC">
+<attribute name="VALUE" x="114.3" y="7.62" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="P+2" gate="1" x="88.9" y="10.16" smashed="yes" rot="R270">
-<attribute name="VALUE" x="83.82" y="12.7" size="1.778" layer="96"/>
+<instance part="P+2" gate="1" x="45.72" y="2.54" smashed="yes" rot="R270" grouprefs="ESP8266 INPUT_OUTPUT_LOGIC">
+<attribute name="VALUE" x="40.64" y="5.08" size="1.778" layer="96"/>
 </instance>
-<instance part="P+4" gate="1" x="-2.54" y="17.78" smashed="yes" rot="R90" grouprefs="TOGGLE_SWITCH">
-<attribute name="VALUE" x="2.54" y="15.24" size="1.778" layer="96" rot="R180"/>
+<instance part="P+4" gate="1" x="-53.34" y="10.16" smashed="yes" rot="R90" grouprefs="TOGGLE_SWITCH INPUT_OUTPUT_LOGIC">
+<attribute name="VALUE" x="-48.26" y="7.62" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+5" gate="1" x="-2.54" y="81.28" smashed="yes" rot="R90" grouprefs="STATUS_LED">
-<attribute name="VALUE" x="2.54" y="78.74" size="1.778" layer="96" rot="R180"/>
+<instance part="P+5" gate="1" x="22.86" y="106.68" smashed="yes" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC">
+<attribute name="VALUE" x="20.32" y="101.6" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="P+6" gate="1" x="307.34" y="48.26" smashed="yes" rot="R270" grouprefs="5V">
-<attribute name="VALUE" x="302.26" y="50.8" size="1.778" layer="96"/>
+<instance part="P+6" gate="1" x="370.84" y="48.26" smashed="yes" rot="R270" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="VALUE" x="365.76" y="50.8" size="1.778" layer="96"/>
 </instance>
-<instance part="P+8" gate="VCC" x="307.34" y="116.84" smashed="yes" rot="R270" grouprefs="4.2V">
-<attribute name="VALUE" x="307.34" y="121.92" size="1.778" layer="96" rot="R180"/>
+<instance part="P+8" gate="VCC" x="370.84" y="116.84" smashed="yes" rot="R270" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="VALUE" x="370.84" y="121.92" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND4" gate="1" x="190.5" y="7.62" smashed="yes" rot="R270" grouprefs="5V">
-<attribute name="VALUE" x="190.5" y="5.08" size="1.778" layer="96" rot="R180"/>
+<instance part="GND4" gate="1" x="254" y="7.62" smashed="yes" rot="R270" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="VALUE" x="254" y="5.08" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND5" gate="1" x="83.82" y="17.78" smashed="yes" rot="R90">
-<attribute name="VALUE" x="83.82" y="20.32" size="1.778" layer="96"/>
+<instance part="GND5" gate="1" x="40.64" y="10.16" smashed="yes" rot="R90" grouprefs="ESP8266 INPUT_OUTPUT_LOGIC">
+<attribute name="VALUE" x="40.64" y="12.7" size="1.778" layer="96"/>
 </instance>
-<instance part="GND6" gate="1" x="50.8" y="81.28" smashed="yes" rot="R90" grouprefs="STATUS_LED">
-<attribute name="VALUE" x="50.8" y="83.82" size="1.778" layer="96"/>
+<instance part="GND6" gate="1" x="22.86" y="53.34" smashed="yes" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC">
+<attribute name="VALUE" x="25.4" y="53.34" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="P+9" gate="1" x="190.5" y="25.4" smashed="yes" rot="R90" grouprefs="5V">
-<attribute name="VALUE" x="190.5" y="27.94" size="1.778" layer="96" rot="R180"/>
+<instance part="P+9" gate="1" x="254" y="25.4" smashed="yes" rot="R90" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY">
+<attribute name="VALUE" x="254" y="27.94" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+7" gate="VCC" x="121.92" y="43.18" smashed="yes">
-<attribute name="VALUE" x="116.84" y="43.18" size="1.778" layer="96" rot="R270"/>
+<instance part="P+7" gate="VCC" x="104.14" y="38.1" smashed="yes" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC">
+<attribute name="VALUE" x="99.06" y="38.1" size="1.778" layer="96" rot="R270"/>
 >>>>>>> develop
 </instance>
 </instances>
 <busses>
 </busses>
 <nets>
+<<<<<<< HEAD
 <net name="N$1" class="0">
 <segment>
-<<<<<<< HEAD
 <wire x1="-17.78" y1="137.16" x2="-17.78" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-17.78" y1="-5.08" x2="279.4" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="279.4" y1="-5.08" x2="279.4" y2="137.16" width="0.1524" layer="91"/>
@@ -7544,69 +7549,138 @@ SMD air coil with pick and place cap</description>
 <pinref part="LED2" gate="G$1" pin="DO"/>
 <pinref part="LED3" gate="G$1" pin="DI"/>
 <wire x1="68.58" y1="73.66" x2="76.2" y2="73.66" width="0.1524" layer="91"/>
-=======
-<wire x1="-12.7" y1="132.08" x2="-12.7" y2="-5.08" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="-5.08" x2="335.28" y2="-5.08" width="0.1524" layer="91"/>
-<wire x1="335.28" y1="-5.08" x2="335.28" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="132.08" x2="335.28" y2="132.08" width="0.1524" layer="91"/>
->>>>>>> develop
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
 <pinref part="WEMOS1" gate="D1" pin="D1"/>
 <pinref part="SIM800L" gate="G$1" pin="TX"/>
-<<<<<<< HEAD
 <wire x1="71.12" y1="25.4" x2="38.1" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="25.4" x2="71.12" y2="13.78" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="13.78" x2="83.6" y2="13.78" width="0.1524" layer="91"/>
-=======
-<wire x1="106.68" y1="27.94" x2="73.66" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="27.94" x2="106.68" y2="26.48" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="26.48" x2="131.86" y2="26.48" width="0.1524" layer="91"/>
->>>>>>> develop
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="WEMOS1" gate="D1" pin="D2"/>
 <pinref part="SIM800L" gate="G$1" pin="RX"/>
-<<<<<<< HEAD
 <wire x1="68.58" y1="22.86" x2="38.1" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="83.6" y1="16.78" x2="68.58" y2="16.78" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="16.78" x2="68.58" y2="22.86" width="0.1524" layer="91"/>
-=======
-<wire x1="104.14" y1="25.4" x2="73.66" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="131.86" y1="29.48" x2="104.14" y2="29.48" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="29.48" x2="104.14" y2="25.4" width="0.1524" layer="91"/>
->>>>>>> develop
 </segment>
 </net>
 <net name="LED_PIN" class="0">
 <segment>
 <pinref part="WEMOS1" gate="D1" pin="D6"/>
-<<<<<<< HEAD
 <wire x1="5.08" y1="20.32" x2="2.54" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="2.54" y1="20.32" x2="2.54" y2="63.5" width="0.1524" layer="91"/>
 <label x="-7.62" y="53.34" size="1.778" layer="95"/>
-=======
-<wire x1="40.64" y1="22.86" x2="35.56" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="35.56" y1="22.86" x2="35.56" y2="50.8" width="0.1524" layer="91"/>
->>>>>>> develop
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="LED1" gate="G$1" pin="DI"/>
-<<<<<<< HEAD
 <wire x1="2.54" y1="73.66" x2="10.16" y2="73.66" width="0.1524" layer="91"/>
+=======
+<net name="N$6" class="0">
+<segment>
+<pinref part="SIM800L" gate="G$1" pin="RX"/>
+<wire x1="114.08" y1="24.4" x2="83.82" y2="24.4" width="0.1524" layer="91" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC"/>
+<wire x1="73.66" y1="17.78" x2="73.66" y2="24.4" width="0.1524" layer="91" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<wire x1="73.66" y1="24.4" x2="114.08" y2="24.4" width="0.1524" layer="91" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<pinref part="WEMOS1" gate="D1" pin="D2"/>
+<wire x1="30.48" y1="17.78" x2="73.66" y2="17.78" width="0.1524" layer="91" grouprefs="INPUT_OUTPUT_LOGIC"/>
+</segment>
+</net>
+<net name="LED_PIN" class="0">
+<segment>
+<pinref part="WEMOS1" gate="D1" pin="D6"/>
+<wire x1="-2.54" y1="15.24" x2="-7.62" y2="15.24" width="0.1524" layer="91" grouprefs="ESP8266 INPUT_OUTPUT_LOGIC"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="-7.62" y1="15.24" x2="-7.62" y2="68.58" width="0.1524" layer="91" grouprefs="INPUT_OUTPUT_LOGIC"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="LED1" gate="G$1" pin="DI"/>
+<wire x1="2.54" y1="68.58" x2="10.16" y2="68.58" width="0.1524" layer="91" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC"/>
+</segment>
+</net>
+<net name="+5V" class="0">
+<segment>
+<pinref part="SWITCH" gate="1" pin="P"/>
+<wire x1="-50.8" y1="10.16" x2="-43.18" y2="10.16" width="0.1524" layer="91" grouprefs="TOGGLE_SWITCH INPUT_OUTPUT_LOGIC"/>
+<pinref part="P+4" gate="1" pin="+5V"/>
+</segment>
+<segment>
+<pinref part="P+5" gate="1" pin="+5V"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="22.86" y1="99.06" x2="22.86" y2="104.14" width="0.1524" layer="91" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC"/>
+</segment>
+<segment>
+<pinref part="5V_REGULATOR" gate="G$1" pin="VOUT"/>
+<pinref part="P+6" gate="1" pin="+5V"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="358.14" y1="48.26" x2="358.14" y2="30.48" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="358.14" y1="48.26" x2="368.3" y2="48.26" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="358.14" y="48.26" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="337.82" y1="48.26" x2="358.14" y2="48.26" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="43.18" x2="337.82" y2="48.26" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="337.82" y="48.26" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="330.2" y1="48.26" x2="337.82" y2="48.26" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="330.2" y1="48.26" x2="330.2" y2="25.4" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="330.2" y1="25.4" x2="317.5" y2="25.4" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+</segment>
+<segment>
+<pinref part="WEMOS1" gate="D1" pin="5V"/>
+<pinref part="P+2" gate="1" pin="+5V"/>
+<wire x1="43.18" y1="2.54" x2="43.18" y2="7.62" width="0.1524" layer="91" grouprefs="ESP8266 INPUT_OUTPUT_LOGIC"/>
+<wire x1="43.18" y1="7.62" x2="30.48" y2="7.62" width="0.1524" layer="91" grouprefs="ESP8266 INPUT_OUTPUT_LOGIC"/>
+</segment>
+</net>
+<net name="BATTERY_GND" class="0">
+<segment>
+<pinref part="TP4056" gate="G$1" pin="B-"/>
+<wire x1="215.9" y1="114.3" x2="215.9" y2="109.22" width="0.1524" layer="91" grouprefs="POWER_SUPPLY CHARGER"/>
+<pinref part="BATTERIE" gate="-1" pin="S"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="VDD"/>
+<pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="22.86" y1="86.106" x2="22.86" y2="91.44" width="0.1524" layer="91" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="27.94" x2="337.82" y2="22.86" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="337.82" y1="27.94" x2="337.82" y2="33.02" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="337.82" y="33.02" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="5V_REGULATOR" gate="G$1" pin="FB"/>
+<wire x1="317.5" y1="27.94" x2="337.82" y2="27.94" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="337.82" y="27.94" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="5V_REGULATOR" gate="G$1" pin="SW"/>
+<wire x1="317.5" y1="22.86" x2="322.58" y2="22.86" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="L1" gate="G$1" pin="2"/>
+<wire x1="322.58" y1="22.86" x2="322.58" y2="38.1" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="322.58" y1="38.1" x2="307.34" y2="38.1" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+>>>>>>> develop
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
+<<<<<<< HEAD
 <pinref part="LED1" gate="G$1" pin="VDD"/>
 <wire x1="22.606" y1="91.44" x2="22.86" y2="91.186" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="93.98" x2="22.86" y2="91.186" width="0.1524" layer="91"/>
@@ -7654,10 +7728,82 @@ SMD air coil with pick and place cap</description>
 <wire x1="38.1" y1="12.7" x2="20.32" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="12.7" x2="20.32" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="50.8" x2="127" y2="50.8" width="0.1524" layer="91"/>
+=======
+<pinref part="L2" gate="G$1" pin="2"/>
+<wire x1="307.34" y1="109.22" x2="325.12" y2="109.22" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="325.12" y1="109.22" x2="325.12" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="4.2V_REGULATOR" gate="G$1" pin="SW"/>
+<wire x1="325.12" y1="91.44" x2="317.5" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="4.2V_REGULATOR" gate="G$1" pin="FB"/>
+<wire x1="317.5" y1="96.52" x2="340.36" y2="96.52" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="340.36" y1="96.52" x2="340.36" y2="101.6" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="340.36" y1="91.44" x2="340.36" y2="96.52" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="340.36" y="96.52" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+</segment>
+</net>
+<net name="V+" class="0">
+<segment>
+<pinref part="P+1" gate="1" pin="V+"/>
+<pinref part="TP4056" gate="G$1" pin="OUT+"/>
+<wire x1="205.74" y1="109.22" x2="205.74" y2="114.3" width="0.1524" layer="91" grouprefs="POWER_SUPPLY CHARGER"/>
+<wire x1="205.74" y1="114.3" x2="200.66" y2="114.3" width="0.1524" layer="91" grouprefs="POWER_SUPPLY CHARGER"/>
+</segment>
+<segment>
+<pinref part="L2" gate="G$1" pin="1"/>
+<wire x1="284.48" y1="109.22" x2="297.18" y2="109.22" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="4.2V_REGULATOR" gate="G$1" pin="VIN"/>
+<wire x1="284.48" y1="93.98" x2="289.56" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="284.48" y1="93.98" x2="284.48" y2="109.22" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="284.48" y="93.98" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="266.7" y1="88.9" x2="266.7" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="266.7" y="93.98" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="P+3" gate="1" pin="V+"/>
+<wire x1="256.54" y1="93.98" x2="266.7" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="266.7" y1="93.98" x2="279.4" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="279.4" y1="93.98" x2="284.48" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="279.4" y="93.98" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="4.2V_REGULATOR" gate="G$1" pin="EN"/>
+<wire x1="289.56" y1="88.9" x2="279.4" y2="88.9" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="279.4" y1="88.9" x2="279.4" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+</segment>
+<segment>
+<pinref part="C3" gate="G$1" pin="1"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+<wire x1="284.48" y1="38.1" x2="297.18" y2="38.1" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="5V_REGULATOR" gate="G$1" pin="VIN"/>
+<wire x1="289.56" y1="25.4" x2="284.48" y2="25.4" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="284.48" y1="25.4" x2="284.48" y2="38.1" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="284.48" y="25.4" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="5V_REGULATOR" gate="G$1" pin="EN"/>
+<wire x1="289.56" y1="20.32" x2="279.4" y2="20.32" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="279.4" y1="20.32" x2="279.4" y2="25.4" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="279.4" y1="25.4" x2="284.48" y2="25.4" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="279.4" y="25.4" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="279.4" y1="25.4" x2="266.7" y2="25.4" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="266.7" y1="25.4" x2="266.7" y2="20.32" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="256.54" y1="25.4" x2="266.7" y2="25.4" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="266.7" y="25.4" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="P+9" gate="1" pin="V+"/>
+</segment>
+</net>
+<net name="BATTERY_VCC" class="0">
+<segment>
+<pinref part="TP4056" gate="G$1" pin="B+"/>
+<wire x1="210.82" y1="114.3" x2="210.82" y2="109.22" width="0.1524" layer="91" grouprefs="POWER_SUPPLY CHARGER"/>
+<pinref part="BATTERIE" gate="-2" pin="S"/>
+>>>>>>> develop
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
+<<<<<<< HEAD
 <label x="124.46" y="2.54" size="1.778" layer="95"/>
 <pinref part="5V_REGULATOR" gate="G$1" pin="GND"/>
 <pinref part="TP4056" gate="G$1" pin="OUT-"/>
@@ -7679,56 +7825,155 @@ SMD air coil with pick and place cap</description>
 <junction x="83.82" y="2.54"/>
 <pinref part="WEMOS1" gate="D1" pin="GND"/>
 <wire x1="55.88" y1="15.24" x2="38.1" y2="15.24" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="WEMOS1" gate="D1" pin="D7"/>
-<wire x1="5.08" y1="17.78" x2="2.54" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="17.78" x2="2.54" y2="2.54" width="0.1524" layer="91"/>
-<label x="-15.24" y="12.7" size="1.778" layer="95"/>
-<wire x1="2.54" y1="2.54" x2="48.26" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="2.54" x2="48.26" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="TOGGLE_SWITCH" gate="1" pin="O"/>
-<wire x1="106.68" y1="101.6" x2="111.76" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="43.18" x2="106.68" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="43.18" x2="106.68" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$11" class="0">
-<segment>
 <pinref part="LED3" gate="G$1" pin="GND"/>
 <pinref part="LED2" gate="G$1" pin="GND"/>
 <junction x="55.88" y="66.04"/>
 <wire x1="55.88" y1="66.04" x2="88.9" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="LED1" gate="G$1" pin="GND"/>
 <wire x1="22.86" y1="66.04" x2="55.88" y2="66.04" width="0.1524" layer="91"/>
-<label x="22.86" y="55.88" size="1.778" layer="95"/>
+<wire x1="38.1" y1="15.24" x2="22.86" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="15.24" x2="22.86" y2="66.04" width="0.1524" layer="91"/>
+<junction x="38.1" y="15.24"/>
+<junction x="22.86" y="66.04"/>
+</segment>
+</net>
+<net name="TOGGLE_SWITCH" class="0">
+<segment>
+<pinref part="WEMOS1" gate="D1" pin="D7"/>
+<wire x1="5.08" y1="17.78" x2="2.54" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="17.78" x2="2.54" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="2.54" x2="48.26" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="2.54" x2="48.26" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="TOGGLE_SWITCH" gate="1" pin="O"/>
+<wire x1="106.68" y1="101.6" x2="111.76" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="43.18" x2="106.68" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="43.18" x2="106.68" y2="43.18" width="0.1524" layer="91"/>
+<label x="-17.78" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="SIM800L" gate="G$1" pin="GND"/>
 <wire x1="83.6" y1="10.16" x2="83.6" y2="10.78" width="0.1524" layer="91"/>
+=======
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="220.98" y1="114.3" x2="226.06" y2="114.3" width="0.1524" layer="91" grouprefs="POWER_SUPPLY CHARGER"/>
+<pinref part="TP4056" gate="G$1" pin="OUT-"/>
+<wire x1="220.98" y1="109.22" x2="220.98" y2="114.3" width="0.1524" layer="91" grouprefs="POWER_SUPPLY CHARGER"/>
+</segment>
+<segment>
+<pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="SIM800L" gate="G$1" pin="GND"/>
+<wire x1="114.08" y1="18.4" x2="114.08" y2="17.78" width="0.1524" layer="91" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC"/>
+<wire x1="114.08" y1="17.78" x2="111.76" y2="17.78" width="0.1524" layer="91" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC"/>
+<wire x1="111.76" y1="17.78" x2="111.76" y2="10.16" width="0.1524" layer="91" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC"/>
+</segment>
+<segment>
+<pinref part="4.2V_REGULATOR" gate="G$1" pin="MODE"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="266.7" y1="76.2" x2="266.7" y2="81.28" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="266.7" y="76.2" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="266.7" y1="76.2" x2="256.54" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="266.7" y1="76.2" x2="284.48" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="358.14" y1="76.2" x2="358.14" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="340.36" y1="76.2" x2="358.14" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="340.36" y1="76.2" x2="340.36" y2="81.28" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="340.36" y="76.2" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="4.2V_REGULATOR" gate="G$1" pin="GND"/>
+<wire x1="317.5" y1="76.2" x2="317.5" y2="88.9" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="317.5" y1="76.2" x2="340.36" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="317.5" y="76.2" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="317.5" y1="76.2" x2="284.48" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="284.48" y="76.2" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="284.48" y1="76.2" x2="284.48" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="284.48" y1="91.44" x2="289.56" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="256.54" y1="76.2" x2="254" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+</segment>
+<segment>
+<pinref part="LED1" gate="G$1" pin="GND"/>
+<wire x1="22.86" y1="55.88" x2="22.86" y2="60.96" width="0.1524" layer="91" grouprefs="STATUS_LED INPUT_OUTPUT_LOGIC"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="WEMOS1" gate="D1" pin="GND"/>
+<wire x1="30.48" y1="10.16" x2="38.1" y2="10.16" width="0.1524" layer="91" grouprefs="ESP8266 INPUT_OUTPUT_LOGIC"/>
+</segment>
+<segment>
+<pinref part="5V_REGULATOR" gate="G$1" pin="GND"/>
+<wire x1="320.04" y1="20.32" x2="317.5" y2="20.32" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="320.04" y1="7.62" x2="320.04" y2="20.32" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="5V_REGULATOR" gate="G$1" pin="MODE"/>
+<wire x1="289.56" y1="22.86" x2="284.48" y2="22.86" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="284.48" y1="22.86" x2="284.48" y2="7.62" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="284.48" y1="7.62" x2="320.04" y2="7.62" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="266.7" y1="12.7" x2="266.7" y2="7.62" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="266.7" y1="7.62" x2="256.54" y2="7.62" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="266.7" y1="7.62" x2="284.48" y2="7.62" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="266.7" y="7.62" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="284.48" y="7.62" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="358.14" y1="7.62" x2="358.14" y2="22.86" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="320.04" y1="7.62" x2="337.82" y2="7.62" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="320.04" y="7.62" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="337.82" y1="7.62" x2="358.14" y2="7.62" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="337.82" y1="7.62" x2="337.82" y2="12.7" width="0.1524" layer="91" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="337.82" y="7.62" grouprefs="5V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+</segment>
+</net>
+<net name="VCC" class="0">
+<segment>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="358.14" y1="116.84" x2="358.14" y2="99.06" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="P+8" gate="VCC" pin="VCC"/>
+<wire x1="368.3" y1="116.84" x2="358.14" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="358.14" y="116.84" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="340.36" y1="111.76" x2="340.36" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="340.36" y1="116.84" x2="358.14" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<junction x="340.36" y="116.84" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="340.36" y1="116.84" x2="332.74" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<wire x1="332.74" y1="93.98" x2="332.74" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+<pinref part="4.2V_REGULATOR" gate="G$1" pin="VOUT"/>
+<wire x1="317.5" y1="93.98" x2="332.74" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V VOLTAGE_REGULATION POWER_SUPPLY"/>
+</segment>
+<segment>
+<wire x1="104.14" y1="30.48" x2="104.14" y2="35.56" width="0.1524" layer="91" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC"/>
+<pinref part="P+7" gate="VCC" pin="VCC"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="SIM800L" gate="G$1" pin="VCC"/>
+<wire x1="114.08" y1="30.4" x2="104.14" y2="30.4" width="0.1524" layer="91" grouprefs="SIM800L_MODULE INPUT_OUTPUT_LOGIC"/>
+>>>>>>> develop
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="BAT_GND" gate="-1" pin="S"/>
-<wire x1="264.16" y1="27.94" x2="264.16" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="264.16" y1="45.72" x2="213.36" y2="45.72" width="0.1524" layer="91"/>
+<<<<<<< HEAD
+<wire x1="259.08" y1="30.48" x2="259.08" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="45.72" x2="213.36" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="TP4056" gate="G$1" pin="B-"/>
 <wire x1="213.36" y1="45.72" x2="213.36" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="BATTERIE" gate="-1" pin="S"/>
+<wire x1="256.54" y1="30.48" x2="259.08" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="BAT_VCC" gate="-1" pin="S"/>
-<wire x1="264.16" y1="25.4" x2="269.24" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="269.24" y1="25.4" x2="269.24" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="264.16" y1="25.4" x2="264.16" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="TP4056" gate="G$1" pin="B+"/>
-<wire x1="269.24" y1="50.8" x2="208.28" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="264.16" y1="50.8" x2="208.28" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="50.8" x2="208.28" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="BATTERIE" gate="-2" pin="S"/>
+<wire x1="256.54" y1="25.4" x2="264.16" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -7743,259 +7988,26 @@ SMD air coil with pick and place cap</description>
 <wire x1="213.36" y1="109.22" x2="213.36" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="83.82" x2="218.44" y2="83.82" width="0.1524" layer="91"/>
 =======
-<wire x1="35.56" y1="60.96" x2="35.56" y2="68.58" width="0.1524" layer="91" grouprefs="STATUS_LED"/>
-</segment>
-</net>
-<net name="+5V" class="0">
-<segment>
-<pinref part="SWITCH" gate="1" pin="P"/>
-<wire x1="0" y1="17.78" x2="7.62" y2="17.78" width="0.1524" layer="91" grouprefs="TOGGLE_SWITCH"/>
-<pinref part="P+4" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="P+5" gate="1" pin="+5V"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="5.08" y1="81.28" x2="0" y2="81.28" width="0.1524" layer="91" grouprefs="STATUS_LED"/>
-</segment>
-<segment>
-<pinref part="5V_REGULATOR" gate="G$1" pin="VOUT"/>
-<pinref part="P+6" gate="1" pin="+5V"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="294.64" y1="48.26" x2="294.64" y2="30.48" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="294.64" y1="48.26" x2="304.8" y2="48.26" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="294.64" y="48.26" grouprefs="5V"/>
-<wire x1="274.32" y1="48.26" x2="294.64" y2="48.26" width="0.1524" layer="91" grouprefs="5V"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="274.32" y1="43.18" x2="274.32" y2="48.26" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="274.32" y="48.26" grouprefs="5V"/>
-<wire x1="266.7" y1="48.26" x2="274.32" y2="48.26" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="266.7" y1="48.26" x2="266.7" y2="25.4" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="266.7" y1="25.4" x2="254" y2="25.4" width="0.1524" layer="91" grouprefs="5V"/>
-</segment>
-<segment>
-<pinref part="WEMOS1" gate="D1" pin="5V"/>
-<pinref part="P+2" gate="1" pin="+5V"/>
-<wire x1="86.36" y1="10.16" x2="86.36" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="15.24" x2="73.66" y2="15.24" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="BATTERY_GND" class="0">
-<segment>
-<pinref part="TP4056" gate="G$1" pin="B-"/>
-<wire x1="149.86" y1="114.3" x2="149.86" y2="109.22" width="0.1524" layer="91" grouprefs="CHARGER"/>
-<pinref part="BATTERIE" gate="-1" pin="S"/>
-</segment>
-</net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="LED1" gate="G$1" pin="VDD"/>
-<pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="18.034" y1="81.28" x2="12.7" y2="81.28" width="0.1524" layer="91" grouprefs="STATUS_LED"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="274.32" y1="27.94" x2="274.32" y2="22.86" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="274.32" y1="27.94" x2="274.32" y2="33.02" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="274.32" y="33.02" grouprefs="5V"/>
-<pinref part="5V_REGULATOR" gate="G$1" pin="FB"/>
-<wire x1="254" y1="27.94" x2="274.32" y2="27.94" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="274.32" y="27.94" grouprefs="5V"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="5V_REGULATOR" gate="G$1" pin="SW"/>
-<wire x1="254" y1="22.86" x2="259.08" y2="22.86" width="0.1524" layer="91" grouprefs="5V"/>
-<pinref part="L1" gate="G$1" pin="2"/>
-<wire x1="259.08" y1="22.86" x2="259.08" y2="38.1" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="259.08" y1="38.1" x2="243.84" y2="38.1" width="0.1524" layer="91" grouprefs="5V"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="L2" gate="G$1" pin="2"/>
-<wire x1="243.84" y1="109.22" x2="261.62" y2="109.22" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="261.62" y1="109.22" x2="261.62" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V"/>
-<pinref part="4.2V_REGULATOR" gate="G$1" pin="SW"/>
-<wire x1="261.62" y1="91.44" x2="254" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="4.2V_REGULATOR" gate="G$1" pin="FB"/>
-<wire x1="254" y1="96.52" x2="276.86" y2="96.52" width="0.1524" layer="91" grouprefs="4.2V"/>
-<pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="276.86" y1="96.52" x2="276.86" y2="101.6" width="0.1524" layer="91" grouprefs="4.2V"/>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="276.86" y1="91.44" x2="276.86" y2="96.52" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="276.86" y="96.52" grouprefs="4.2V"/>
-</segment>
-</net>
-<net name="V+" class="0">
-<segment>
-<pinref part="P+1" gate="1" pin="V+"/>
-<pinref part="TP4056" gate="G$1" pin="OUT+"/>
-<wire x1="139.7" y1="109.22" x2="139.7" y2="114.3" width="0.1524" layer="91" grouprefs="CHARGER"/>
-<wire x1="139.7" y1="114.3" x2="134.62" y2="114.3" width="0.1524" layer="91" grouprefs="CHARGER"/>
-</segment>
-<segment>
-<pinref part="L2" gate="G$1" pin="1"/>
-<wire x1="220.98" y1="109.22" x2="233.68" y2="109.22" width="0.1524" layer="91" grouprefs="4.2V"/>
-<pinref part="4.2V_REGULATOR" gate="G$1" pin="VIN"/>
-<wire x1="220.98" y1="93.98" x2="226.06" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="220.98" y1="93.98" x2="220.98" y2="109.22" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="220.98" y="93.98" grouprefs="4.2V"/>
-<pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="203.2" y1="88.9" x2="203.2" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="203.2" y="93.98" grouprefs="4.2V"/>
-<pinref part="P+3" gate="1" pin="V+"/>
-<wire x1="193.04" y1="93.98" x2="203.2" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="203.2" y1="93.98" x2="215.9" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="215.9" y1="93.98" x2="220.98" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="215.9" y="93.98" grouprefs="4.2V"/>
-<pinref part="4.2V_REGULATOR" gate="G$1" pin="EN"/>
-<wire x1="226.06" y1="88.9" x2="215.9" y2="88.9" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="215.9" y1="88.9" x2="215.9" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V"/>
-</segment>
-<segment>
-<pinref part="C3" gate="G$1" pin="1"/>
-<pinref part="L1" gate="G$1" pin="1"/>
-<wire x1="220.98" y1="38.1" x2="233.68" y2="38.1" width="0.1524" layer="91" grouprefs="5V"/>
-<pinref part="5V_REGULATOR" gate="G$1" pin="VIN"/>
-<wire x1="226.06" y1="25.4" x2="220.98" y2="25.4" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="220.98" y1="25.4" x2="220.98" y2="38.1" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="220.98" y="25.4" grouprefs="5V"/>
-<pinref part="5V_REGULATOR" gate="G$1" pin="EN"/>
-<wire x1="226.06" y1="20.32" x2="215.9" y2="20.32" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="215.9" y1="20.32" x2="215.9" y2="25.4" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="215.9" y1="25.4" x2="220.98" y2="25.4" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="215.9" y="25.4" grouprefs="5V"/>
-<wire x1="215.9" y1="25.4" x2="203.2" y2="25.4" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="203.2" y1="25.4" x2="203.2" y2="20.32" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="193.04" y1="25.4" x2="203.2" y2="25.4" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="203.2" y="25.4" grouprefs="5V"/>
-<pinref part="P+9" gate="1" pin="V+"/>
-</segment>
-</net>
-<net name="BATTERY_VCC" class="0">
-<segment>
-<pinref part="TP4056" gate="G$1" pin="B+"/>
-<wire x1="144.78" y1="114.3" x2="144.78" y2="109.22" width="0.1524" layer="91" grouprefs="CHARGER"/>
-<pinref part="BATTERIE" gate="-2" pin="S"/>
-</segment>
-</net>
-<net name="GND" class="0">
-<segment>
-<pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="154.94" y1="114.3" x2="160.02" y2="114.3" width="0.1524" layer="91" grouprefs="CHARGER"/>
-<pinref part="TP4056" gate="G$1" pin="OUT-"/>
-<wire x1="154.94" y1="109.22" x2="154.94" y2="114.3" width="0.1524" layer="91" grouprefs="CHARGER"/>
-</segment>
-<segment>
-<pinref part="GND3" gate="1" pin="GND"/>
-<pinref part="SIM800L" gate="G$1" pin="GND"/>
-<wire x1="131.86" y1="23.48" x2="131.86" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="131.86" y1="22.86" x2="129.54" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="22.86" x2="129.54" y2="15.24" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="4.2V_REGULATOR" gate="G$1" pin="MODE"/>
-<pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="203.2" y1="76.2" x2="203.2" y2="81.28" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="203.2" y="76.2" grouprefs="4.2V"/>
-<wire x1="203.2" y1="76.2" x2="193.04" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="203.2" y1="76.2" x2="220.98" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V"/>
-<pinref part="R5" gate="G$1" pin="1"/>
-<pinref part="C5" gate="G$1" pin="1"/>
-<wire x1="294.64" y1="76.2" x2="294.64" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="276.86" y1="76.2" x2="294.64" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="276.86" y1="76.2" x2="276.86" y2="81.28" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="276.86" y="76.2" grouprefs="4.2V"/>
-<pinref part="4.2V_REGULATOR" gate="G$1" pin="GND"/>
-<wire x1="254" y1="76.2" x2="254" y2="88.9" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="254" y1="76.2" x2="276.86" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="254" y="76.2" grouprefs="4.2V"/>
-<wire x1="254" y1="76.2" x2="220.98" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="220.98" y="76.2" grouprefs="4.2V"/>
-<wire x1="220.98" y1="76.2" x2="220.98" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="220.98" y1="91.44" x2="226.06" y2="91.44" width="0.1524" layer="91" grouprefs="4.2V"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="193.04" y1="76.2" x2="190.5" y2="76.2" width="0.1524" layer="91" grouprefs="4.2V"/>
-</segment>
-<segment>
-<pinref part="LED1" gate="G$1" pin="GND"/>
-<wire x1="48.26" y1="81.28" x2="43.18" y2="81.28" width="0.1524" layer="91" grouprefs="STATUS_LED"/>
-<pinref part="GND6" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND5" gate="1" pin="GND"/>
-<pinref part="WEMOS1" gate="D1" pin="GND"/>
-<wire x1="73.66" y1="17.78" x2="81.28" y2="17.78" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="5V_REGULATOR" gate="G$1" pin="GND"/>
-<wire x1="256.54" y1="20.32" x2="254" y2="20.32" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="256.54" y1="7.62" x2="256.54" y2="20.32" width="0.1524" layer="91" grouprefs="5V"/>
-<pinref part="5V_REGULATOR" gate="G$1" pin="MODE"/>
-<wire x1="226.06" y1="22.86" x2="220.98" y2="22.86" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="220.98" y1="22.86" x2="220.98" y2="7.62" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="220.98" y1="7.62" x2="256.54" y2="7.62" width="0.1524" layer="91" grouprefs="5V"/>
-<pinref part="C3" gate="G$1" pin="2"/>
-<wire x1="203.2" y1="12.7" x2="203.2" y2="7.62" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="203.2" y1="7.62" x2="193.04" y2="7.62" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="203.2" y1="7.62" x2="220.98" y2="7.62" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="203.2" y="7.62" grouprefs="5V"/>
-<junction x="220.98" y="7.62" grouprefs="5V"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="294.64" y1="7.62" x2="294.64" y2="22.86" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="256.54" y1="7.62" x2="274.32" y2="7.62" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="256.54" y="7.62" grouprefs="5V"/>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="274.32" y1="7.62" x2="294.64" y2="7.62" width="0.1524" layer="91" grouprefs="5V"/>
-<wire x1="274.32" y1="7.62" x2="274.32" y2="12.7" width="0.1524" layer="91" grouprefs="5V"/>
-<junction x="274.32" y="7.62" grouprefs="5V"/>
-<pinref part="GND4" gate="1" pin="GND"/>
-</segment>
-</net>
-<net name="VCC" class="0">
-<segment>
-<pinref part="C5" gate="G$1" pin="2"/>
-<wire x1="294.64" y1="116.84" x2="294.64" y2="99.06" width="0.1524" layer="91" grouprefs="4.2V"/>
-<pinref part="P+8" gate="VCC" pin="VCC"/>
-<wire x1="304.8" y1="116.84" x2="294.64" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="294.64" y="116.84" grouprefs="4.2V"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="276.86" y1="111.76" x2="276.86" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="276.86" y1="116.84" x2="294.64" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V"/>
-<junction x="276.86" y="116.84" grouprefs="4.2V"/>
-<wire x1="276.86" y1="116.84" x2="269.24" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V"/>
-<wire x1="269.24" y1="93.98" x2="269.24" y2="116.84" width="0.1524" layer="91" grouprefs="4.2V"/>
-<pinref part="4.2V_REGULATOR" gate="G$1" pin="VOUT"/>
-<wire x1="254" y1="93.98" x2="269.24" y2="93.98" width="0.1524" layer="91" grouprefs="4.2V"/>
-</segment>
-<segment>
-<wire x1="121.92" y1="35.56" x2="121.92" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="P+7" gate="VCC" pin="VCC"/>
-</segment>
-</net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="SIM800L" gate="G$1" pin="VCC"/>
-<wire x1="131.86" y1="35.48" x2="121.92" y2="35.48" width="0.1524" layer="91"/>
-<pinref part="SIM800L" gate="G$1" pin="RST"/>
-<wire x1="131.86" y1="35.48" x2="131.86" y2="32.48" width="0.1524" layer="91"/>
-<junction x="131.86" y="35.48"/>
-</segment>
-</net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="SWITCH" gate="1" pin="O"/>
 <pinref part="WEMOS1" gate="D1" pin="D7"/>
-<wire x1="7.62" y1="20.32" x2="17.78" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="20.32" x2="40.64" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="SWITCH" gate="1" pin="O"/>
+<wire x1="-33.02" y1="12.7" x2="-2.54" y2="12.7" width="0.1524" layer="91" grouprefs="INPUT_OUTPUT_LOGIC"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="WEMOS1" gate="D1" pin="D1"/>
+<wire x1="30.48" y1="20.32" x2="68.58" y2="20.32" width="0.1524" layer="91" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<pinref part="SIM800L" gate="G$1" pin="TX"/>
+<wire x1="68.58" y1="20.32" x2="68.58" y2="21.4" width="0.1524" layer="91" grouprefs="INPUT_OUTPUT_LOGIC"/>
+<wire x1="68.58" y1="21.4" x2="114.08" y2="21.4" width="0.1524" layer="91" grouprefs="INPUT_OUTPUT_LOGIC"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<wire x1="-73.66" y1="-20.32" x2="-73.66" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="-73.66" y1="152.4" x2="396.24" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="396.24" y1="152.4" x2="396.24" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="396.24" y1="-20.32" x2="-73.66" y2="-20.32" width="0.1524" layer="91"/>
 >>>>>>> develop
 </segment>
 </net>

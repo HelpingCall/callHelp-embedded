@@ -1,0 +1,75 @@
+GanttProject 2.8.10 Pilsen (build 2363)
+Settings file:
+	location: C:\Users\magnu\.ganttproject
+	size:0
+	is readable: false
+java.class.path: eclipsito.jar;C:\Program Files (x86)\GanttProject-2.8
+java.home: C:\Program Files\Java\jre1.8.0_241
+java.ext.dirs: C:\Program Files\Java\jre1.8.0_241\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+java.io.tmpdir: C:\Users\magnu\AppData\Local\Temp\
+java.runtime.version: 1.8.0_241-b07
+java.vendor: Oracle Corporation
+java.vm.name: Java HotSpot(TM) 64-Bit Server VM
+java.vm.vendor: Oracle Corporation
+java.vm.version: 25.241-b07
+os.arch: amd64
+os.name: Windows 10
+os.version: 10.0
+sun.java.command: org.bardsoftware.eclipsito.Boot ganttproject-eclipsito-config.xml -log true C:\Users\magnu\TH-DEV\Abgaben\.ganttproject
+user.country: DE
+user.dir: C:\Program Files (x86)\GanttProject-2.8
+user.home: C:\Users\magnu
+user.language: de
+user.timezone: Europe/Berlin
+
+Mär 25, 2020 11:02:01 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Waiting until main window closes
+Creating main frame...
+1. loading look'n'feels
+no editor for column=0 class=interface javax.swing.Icon
+no editor for column=1 class=interface javax.swing.Icon
+no editor for column=2 class=interface javax.swing.Icon
+2. loading options
+3. creating menus...
+4. creating views...
+5. calculating size and packing...
+6. changing language ...
+7. first attempt to restore bounds
+8. finalizing...
+Main frame created
+no editor for column=0 class=interface javax.swing.Icon
+no editor for column=1 class=interface javax.swing.Icon
+no editor for column=2 class=interface javax.swing.Icon
+Mär 25, 2020 11:02:02 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Bounds after setVisible: java.awt.Rectangle[x=40,y=219,width=1745,height=778]
+Splash closed
+Resizing window...
+Mär 25, 2020 11:02:02 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Bounds after opening: java.awt.Rectangle[x=40,y=219,width=1745,height=778]
+Mär 25, 2020 11:02:10 AM org.ganttproject.impex.htmlpdf.itext.ITextEngine$2 run
+INFORMATION: Scanning font directories...
+Mär 25, 2020 11:02:10 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=C:\Program Files\Java\jre1.8.0_241/lib/fonts
+Mär 25, 2020 11:02:10 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=C:/windows/fonts
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=/usr/share/fonts/truetype
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: directory /usr/share/fonts/truetype is not readable
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=/System/Library/Fonts
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: directory /System/Library/Fonts is not readable
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=/C:/Program Files (x86)/GanttProject-2.8/plugins-2.8.10/org.ganttproject.impex.htmlpdf/resource/fonts
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.itext.ITextEngine$2 run
+INFORMATION: Scanning font directories completed
+Mär 25, 2020 11:02:53 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: [GanttOptions] save(): finished!!
+no editor for column=0 class=interface javax.swing.Icon
+no editor for column=1 class=interface javax.swing.Icon
+no editor for column=2 class=interface javax.swing.Icon
+Mär 25, 2020 11:02:55 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Main window has closed
+Mär 25, 2020 11:02:55 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Program terminated

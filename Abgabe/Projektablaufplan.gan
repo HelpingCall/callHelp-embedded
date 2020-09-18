@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Digitaler Hilferuf" company="TH-OWL" webLink="https://TH-OWL.de" view-date="2020-04-01" view-index="0" gantt-divider-location="344" resource-divider-location="300" version="2.8.10" locale="de_DE">
+    <description><![CDATA[Projektarbeit Digitaler Hilferuf]]></description>
+    <view zooming-state="default:3" id="gantt-chart">
+        <field id="tpd3" name="Vorgang" width="221" order="0"/>
+        <field id="tpd4" name="Anfang" width="63" order="1"/>
+        <field id="tpd5" name="Ende" width="56" order="2"/>
+        <timeline><![CDATA[0,10,16]]></timeline>
+        <option id="color.recent"><![CDATA[#0000ff #33ffff #ff3333 #ff33ff #ffff00 #66ff66 #f4f4f4 #cc00cc]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Ressource" width="210" order="0"/>
+        <field id="1" name="Rolle" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Planung" color="#66ff66" meeting="false" start="2020-03-28" duration="12" complete="92" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true">
+            <depend id="130" type="2" difference="0" hardness="Strong"/>
+            <task id="4" name="Projektziel definieren" color="#66ff66" meeting="false" start="2020-03-28" duration="4" complete="100" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true"/>
+            <task id="6" name="Funktionen erarbeiten" color="#66ff66" meeting="false" start="2020-04-01" duration="3" complete="100" thirdDate="2020-03-31" thirdDate-constraint="0" expand="true"/>
+            <task id="7" name="Umsetzungsablauf" color="#66ff66" meeting="false" start="2020-04-03" duration="3" complete="100" thirdDate="2020-04-01" thirdDate-constraint="0" expand="true"/>
+            <task id="8" name="Projektkosten" color="#66ff66" meeting="false" start="2020-04-06" duration="3" complete="100" thirdDate="2020-04-01" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="130" name="Planung abgeschlossen" color="#66ff66" meeting="true" start="2020-04-09" duration="0" complete="0" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true"/>
+        <task id="116" name="Komponenten Bestellen" color="#8cb6ce" meeting="false" start="2020-04-08" duration="15" complete="0" thirdDate="2020-04-05" thirdDate-constraint="0" expand="true">
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
+            <depend id="120" type="2" difference="0" hardness="Strong"/>
+            <task id="132" name="Warten auf Lieferung" color="#8cb6ce" meeting="false" start="2020-04-08" duration="15" complete="0" thirdDate="2020-03-30" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="120" name="Lieferung eingetroffen" color="#8cb6ce" meeting="true" start="2020-04-23" duration="0" complete="0" thirdDate="2020-04-05" thirdDate-constraint="0" expand="true"/>
+        <task id="10" name="Hardware" color="#0000ff" meeting="false" start="2020-04-23" duration="15" complete="0" thirdDate="2020-04-02" thirdDate-constraint="0" priority="2" expand="true">
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+            <depend id="28" type="2" difference="0" hardness="Strong"/>
+            <task id="17" name="Entwurf designen" color="#0000ff" meeting="false" start="2020-04-23" duration="2" complete="0" thirdDate="2020-04-02" thirdDate-constraint="0" expand="true">
+                <depend id="26" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="26" name="Prototyp anfertigen" color="#0000ff" meeting="false" start="2020-04-25" duration="4" complete="0" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="13" name="Test des Prototypen" color="#0000ff" meeting="false" start="2020-04-29" duration="2" complete="0" thirdDate="2020-04-06" thirdDate-constraint="0" expand="true">
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+                <depend id="18" type="2" difference="0" hardness="Strong"/>
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="14" name="Finale Hardware" color="#0000ff" meeting="false" start="2020-05-01" duration="5" complete="0" thirdDate="2020-04-08" thirdDate-constraint="0" expand="true">
+                <depend id="61" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="61" name="Hardware fertig" color="#0000ff" meeting="true" start="2020-05-06" duration="0" complete="0" thirdDate="2020-04-09" thirdDate-constraint="0" expand="true">
+                <depend id="57" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="57" name="Benutzerfreundlichkeit testen" color="#0000ff" meeting="false" start="2020-05-06" duration="2" complete="0" thirdDate="2020-04-09" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="15" name="Hardware abgeschlossen" color="#0000ff" meeting="true" start="2020-05-08" duration="0" complete="0" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true"/>
+        <task id="16" name="Software" color="#33ffff" meeting="false" start="2020-04-25" duration="20" complete="1" thirdDate="2020-03-26" thirdDate-constraint="0" priority="2" expand="true">
+            <depend id="23" type="2" difference="0" hardness="Strong"/>
+            <task id="25" name="Entwurf designen" color="#33ffff" meeting="false" start="2020-04-25" duration="4" complete="10" thirdDate="2020-04-06" thirdDate-constraint="0" expand="true">
+                <depend id="19" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="19" name="Webspace Software" color="#33ffff" meeting="false" start="2020-04-29" duration="13" complete="0" thirdDate="2020-04-08" thirdDate-constraint="0" expand="true">
+                <depend id="44" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="44" name="Webspace Fertig" color="#33ffff" meeting="true" start="2020-05-12" duration="0" complete="0" thirdDate="2020-04-09" thirdDate-constraint="0" expand="true">
+                <depend id="20" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="18" name="Embedded Software" color="#33ffff" meeting="false" start="2020-05-01" duration="3" complete="0" thirdDate="2020-04-08" thirdDate-constraint="0" expand="true">
+                <depend id="46" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="46" name="Embedded Fertig" color="#33ffff" meeting="true" start="2020-05-04" duration="0" complete="0" thirdDate="2020-04-09" thirdDate-constraint="0" expand="true">
+                <depend id="20" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="20" name="Benutzerfreundlichkeit testen" color="#33ffff" meeting="false" start="2020-05-12" duration="3" complete="0" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="23" name="Software abgeschlossen" color="#33ffff" meeting="true" start="2020-05-15" duration="0" complete="0" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true"/>
+        <task id="36" name="Gehäuse" color="#ff3333" meeting="false" start="2020-05-01" duration="17" complete="0" thirdDate="2020-04-08" thirdDate-constraint="0" priority="2" expand="true">
+            <depend id="29" type="2" difference="0" hardness="Strong"/>
+            <task id="11" name="Entwurf designen" color="#ff3333" meeting="false" start="2020-05-01" duration="3" complete="0" thirdDate="2020-04-08" thirdDate-constraint="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="12" name="Prototyp anfertigen" color="#ff3333" meeting="false" start="2020-05-04" duration="5" complete="0" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true">
+                <depend id="27" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="27" name="Finales Gehäuse" color="#ff3333" meeting="false" start="2020-05-09" duration="6" complete="0" thirdDate="2020-04-11" thirdDate-constraint="0" expand="true">
+                <depend id="28" type="2" difference="0" hardness="Strong"/>
+                <depend id="37" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="37" name="Finales Gehäuse Fertig" color="#ff3333" meeting="true" start="2020-05-15" duration="0" complete="0" thirdDate="2020-04-13" thirdDate-constraint="0" expand="true"/>
+            <task id="28" name="Qualitätssicherung" color="#ff3333" meeting="false" start="2020-05-15" duration="3" complete="0" thirdDate="2020-04-13" thirdDate-constraint="0" expand="true">
+                <depend id="29" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="29" name="Gehäuse abgeschlossen" color="#ff3333" meeting="true" start="2020-05-18" duration="0" complete="0" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true">
+            <depend id="30" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="30" name="Produkttest" color="#ff33ff" meeting="false" start="2020-05-18" duration="3" complete="0" thirdDate="2020-04-16" thirdDate-constraint="0" priority="2" expand="true">
+            <depend id="35" type="2" difference="0" hardness="Strong"/>
+            <task id="31" name="Funktionstest" color="#ff33ff" meeting="false" start="2020-05-18" duration="3" complete="0" thirdDate="2020-04-16" thirdDate-constraint="0" expand="true"/>
+            <task id="32" name="Stabilität" color="#ff33ff" meeting="false" start="2020-05-18" duration="1" complete="0" thirdDate="2020-04-18" thirdDate-constraint="0" expand="true"/>
+            <task id="33" name="Benutzerfreundlichkeit" color="#ff33ff" meeting="false" start="2020-05-18" duration="2" complete="0" thirdDate="2020-04-19" thirdDate-constraint="0" expand="true"/>
+            <task id="34" name="Testgruppe - Passanten?" color="#ff33ff" meeting="false" start="2020-05-18" duration="2" complete="0" thirdDate="2020-04-21" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="35" name="Projekt abgeschlossen" color="#cc00cc" meeting="true" start="2020-05-21" duration="0" complete="0" thirdDate="2020-03-26" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>

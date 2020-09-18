@@ -1,0 +1,30 @@
+Mär 25, 2020 11:02:01 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Waiting until main window closes
+Mär 25, 2020 11:02:02 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Bounds after setVisible: java.awt.Rectangle[x=40,y=219,width=1745,height=778]
+Mär 25, 2020 11:02:02 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Bounds after opening: java.awt.Rectangle[x=40,y=219,width=1745,height=778]
+Mär 25, 2020 11:02:10 AM org.ganttproject.impex.htmlpdf.itext.ITextEngine$2 run
+INFORMATION: Scanning font directories...
+Mär 25, 2020 11:02:10 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=C:\Program Files\Java\jre1.8.0_241/lib/fonts
+Mär 25, 2020 11:02:10 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=C:/windows/fonts
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=/usr/share/fonts/truetype
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: directory /usr/share/fonts/truetype is not readable
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=/System/Library/Fonts
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: directory /System/Library/Fonts is not readable
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.fonts.TTFontCache registerDirectory
+INFORMATION: scanning directory=/C:/Program Files (x86)/GanttProject-2.8/plugins-2.8.10/org.ganttproject.impex.htmlpdf/resource/fonts
+Mär 25, 2020 11:02:13 AM org.ganttproject.impex.htmlpdf.itext.ITextEngine$2 run
+INFORMATION: Scanning font directories completed
+Mär 25, 2020 11:02:53 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: [GanttOptions] save(): finished!!
+Mär 25, 2020 11:02:55 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Main window has closed
+Mär 25, 2020 11:02:55 AM net.sourceforge.ganttproject.GPLogger log
+INFORMATION: Program terminated
